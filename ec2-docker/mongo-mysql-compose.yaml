@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo-apps0
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - "${MONGO_VOLUME_PATH}:/data/db"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_USER}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_PASSWORD}"
+
+  mysql:
+    image: mysql
+    container_name: mysql-apps0
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - "${MYSQL_VOLUME_PATH}:/data/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+
+volumes:
+  mongo_data:
+  mysql_data:
