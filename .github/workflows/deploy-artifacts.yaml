@@ -29,8 +29,8 @@ jobs:
 
       - name: Copy docker compose file to S3
         run: |
-          aws s3 cp ec2-docker/mongo-mysql-compose.yaml s3://${{ env.BUCKET_NAME }}/docker/mongo-mysql-compose.yaml
+          aws s3 cp /ec2-docker/mongo-mysql-compose.yaml s3://${{ env.BUCKET_NAME }}/docker/mongo-mysql-compose.yaml
 
       - name: Copy apache script to S3  
         run: |
-          aws s3 cp ec2-data/apache-hello.sh s3://${{ env.BUCKET_NAME }}/scripts/apache-hello.sh 
+          aws s3 cp /ec2-data/apache-hello.sh s3://${{ env.BUCKET_NAME }}/scripts/apache-hello.sh 
