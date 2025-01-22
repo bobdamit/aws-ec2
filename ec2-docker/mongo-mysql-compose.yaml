@@ -17,9 +17,9 @@ services:
     container_name: mysql-apps0
     restart: always
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
-      - "${MYSQL_VOLUME_PATH}:/data/mysql"
+      - "${MYSQL_VOLUME_PATH}:/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
 
